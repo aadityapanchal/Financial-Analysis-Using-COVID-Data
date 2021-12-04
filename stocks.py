@@ -4,7 +4,6 @@ import datetime
 from pyspark.sql import SparkSession, functions, types
 from pyspark import SparkConf, SparkContext
 from pyspark.sql.functions import *
-#comment
 
 
 stocks_schema = types.StructType([
