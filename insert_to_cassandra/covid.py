@@ -123,8 +123,6 @@ def map_function_deaths_US(line):
 
 
 def main():
-    print('#######################################')
-    print(sys.path)
     #etl for covid data for us and save to cassandra db
     covid_us_rdd = sc.textFile('./datasets/covid/time_series_covid19_confirmed_US.csv')
     covid_us_rdd_header = covid_us_rdd.first()
