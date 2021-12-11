@@ -2,7 +2,7 @@
 CMPT 726 Big Data Project
 
 ## Step 1
-Create the schema for all the tables in cassandra
+Create the schema for all the tables in cassandra.\n
 We will be using the following tables for our project.
 
 Create keyspace for the project
