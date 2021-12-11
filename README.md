@@ -118,6 +118,41 @@ report pdf:
 ppt:
 
 
+## The project uses following directories
+
+the soruce directory has following files and folders:<br/>
+
+**dataflix.sh**
+
+**datasets**<br/>
+	-covid<br/>
+	-stocks<br/>
+	-forex<br/>
+	-commodities<br/>
+	-crypto<br/>
+
+**insert_to_cassandra**<br/>
+	-covid.py<br/>
+	-crypto.py<br/>
+	-stocks.py<br/>
+	-commodities.py<br/>
+	-forex.py<br/>
+	
+**load_data**<br/>
+	-load_covid.py<br/>
+	-load_crypto.py<br/>
+	-load_stocks.py<br/>
+	-load_commodities.py<br/>
+	-load_forex.py<br/>
+
+**model_train**<br/>
+	-models/model_type/individual_models<br/>
+	-cypto_model.py<br/>
+	-stocks_model.py<br/>
+	-commodities_model.py<br/>
+	-forex_model.py <br/>
+
+
 
 
 
