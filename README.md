@@ -125,33 +125,16 @@ the soruce directory has following files and folders:<br/>
 **dataflix.sh**
 
 **datasets**<br/>
-	-covid<br/>
-	-stocks<br/>
-	-forex<br/>
-	-commodities<br/>
-	-crypto<br/>
+This directory has the datasets for covid19 data, stocks, forex, commodities and crypto data in their respective directories.<br/>
 
 **insert_to_cassandra**<br/>
-	-covid.py<br/>
-	-crypto.py<br/>
-	-stocks.py<br/>
-	-commodities.py<br/>
-	-forex.py<br/>
-	
+This has individual python files like covid.py(to save covid data), crypto.py(to save crypto data), etc to run spark jobs that saves data into cassandra db.<br/>
+
 **load_data**<br/>
-	-load_covid.py<br/>
-	-load_crypto.py<br/>
-	-load_stocks.py<br/>
-	-load_commodities.py<br/>
-	-load_forex.py<br/>
+This directory has files to load the data from cassandra tables. After laoding, etl and aggregate operations are performed and then the daatframe is saved as csv file for visualization using Tableu.<br/> 
 
 **model_train**<br/>
-	-models/model_type/individual_models<br/>
-	-cypto_model.py<br/>
-	-stocks_model.py<br/>
-	-commodities_model.py<br/>
-	-forex_model.py <br/>
-
+This directory has the python model that trains and saves the machine learning models and used the load_data directory to get the data for training and validating the model.
 
 
 
