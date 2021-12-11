@@ -53,7 +53,7 @@ Covid19 data related tables:
     PRIMARY KEY (date, country)<br/>
 );<br/>**
 
-Stock market Related table
+Stock market Related table:
 
 **CREATE TABLE dataflix.stocks (<br/>
     stock_type text,<br/>
@@ -66,18 +66,17 @@ Stock market Related table
     PRIMARY KEY (stock_type, date)<br/>
 );<br/>**
 
-Cryptocurrencies market related tables:
+Cryptocurrencies market related table:
 
-**CREATE TABLE dataflix.commodities (<br/>
-    type text,<br/>
-    market text,<br/>
+**CREATE TABLE dataflix.crypto (<br/>
+    cryptotype text,<br/>
     date date,<br/>
     close float,<br/>
     high float,<br/>
     low float,<br/>
     open float,<br/>
     volume float,<br/>
-    PRIMARY KEY (type, market, date)<br/>
+    PRIMARY KEY (cryptotype, date)<br/>
 );<br/>**
 
 Foreign Exchange Market realted table:
