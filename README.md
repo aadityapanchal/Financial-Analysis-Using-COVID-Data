@@ -11,14 +11,14 @@ Create keyspace for the project<br/>
 Create the following tables
 Covid19 data related tables:
 
-**CREATE TABLE dataflix.covid19_cases_us (
-    date date,
-    city text,
-    province text,
-    new_cases_us int,
-    total_cases_us int,
-    PRIMARY KEY (date, city, province)
-)**
+**CREATE TABLE dataflix.covid19_cases_us (<br/>
+    date date,<br/>
+    city text,<br/>
+    province text,<br/>
+    new_cases_us int,<br/>
+    total_cases_us int,<br/>
+    PRIMARY KEY (date, city, province)<br/>
+)<br/>**
 
 **CREATE TABLE dataflix.covid19_deaths_us (
     date date,
