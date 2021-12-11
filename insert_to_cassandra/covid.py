@@ -2,8 +2,6 @@ from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession, functions, types
 from datetime import date, timedelta
 import sys
-import schemas as schemas
-import map_functions as maps
 assert sys.version_info >= (3, 5) # make sure we have Python 3.5+
 
 
@@ -128,7 +126,7 @@ def main():
     covid_us_rdd_header = covid_us_rdd.first()
     print("inside shell script")
     covid_us_rdd_body = covid_us_rdd.filter(lambda line : line != covid_us_rdd_header)
-    covid_data_us_df = spark.createDataFrame(covid_us_rdd_body.flatMap(map_function_US), schema = schemas.get_covid19_conifrmed_US_schema())
+    covid_data_us_df = spark.createDataFrame(covid_us_rdd_body.flatMap(map_function_US), schema = get_covid19_conifrmed_US_schema())
     covid_data_us_df.write.format("org.apache.spark.sql.cassandra") \
                     .mode("overwrite").option("confirm.truncate","true") \
                     .options(keyspace='dataflix',table='covid19_cases_us').save()
@@ -138,7 +136,7 @@ def main():
     covid_global_rdd = sc.textFile('./datasets/covid/time_series_covid19_confirmed_global.csv')
     covid_global_rdd_header = covid_global_rdd.first()
     covid_global_rdd_body = covid_global_rdd.filter(lambda line : line != covid_global_rdd_header)
-    covid_data_global_df = spark.createDataFrame(covid_global_rdd_body.flatMap(map_function_global), schema = schemas.get_covid19_conifrmed_global_schema())
+    covid_data_global_df = spark.createDataFrame(covid_global_rdd_body.flatMap(map_function_global), schema = get_covid19_conifrmed_global_schema())
     covid_data_global_df.write.format("org.apache.spark.sql.cassandra") \
                     .mode("overwrite").option("confirm.truncate","true") \
                     .options(keyspace='dataflix',table='covid19_cases_global').save()
@@ -148,7 +146,7 @@ def main():
     deaths_us_rdd = sc.textFile('./datasets/covid/time_series_covid19_deaths_US.csv')
     deaths_us_rdd_header = deaths_us_rdd.first()
     deaths_us_rdd_body = deaths_us_rdd.filter(lambda line : line != deaths_us_rdd_header)
-    deaths_data_us_df = spark.createDataFrame(deaths_us_rdd_body.flatMap(map_function_deaths_US), schema = schemas.get_covid19_deaths_us_schema())
+    deaths_data_us_df = spark.createDataFrame(deaths_us_rdd_body.flatMap(map_function_deaths_US), schema = get_covid19_deaths_us_schema())
     deaths_data_us_df.write.format("org.apache.spark.sql.cassandra") \
                     .mode("overwrite").option("confirm.truncate","true") \
                     .options(keyspace='dataflix',table='covid19_deaths_us').save()
@@ -158,7 +156,7 @@ def main():
     deaths_global_rdd = sc.textFile('./datasets/covid/time_series_covid19_deaths_global.csv')
     deaths_global_rdd_header = deaths_global_rdd.first()
     deaths_global_rdd_body = deaths_global_rdd.filter(lambda line : line != deaths_global_rdd_header)
-    deaths_data_global_df = spark.createDataFrame(deaths_global_rdd_body.flatMap(map_function_global), schema = schemas.get_covid19_deaths_global_schema())
+    deaths_data_global_df = spark.createDataFrame(deaths_global_rdd_body.flatMap(map_function_global), schema = get_covid19_deaths_global_schema())
     deaths_data_global_df.write.format("org.apache.spark.sql.cassandra") \
                     .mode("overwrite").option("confirm.truncate","true") \
                     .options(keyspace='dataflix',table='covid19_deaths_global').save()
@@ -168,7 +166,7 @@ def main():
     recovered_global_rdd = sc.textFile('./datasets/covid/time_series_covid19_recovered_global.csv')
     recovered_global_rdd_header = recovered_global_rdd.first()
     recovered_global_rdd_body = deaths_global_rdd.filter(lambda line : line != recovered_global_rdd_header)
-    recovered_global_df = spark.createDataFrame(recovered_global_rdd_body.flatMap(map_function_global), schema = schemas.get_covid19_recovered_global_schema())
+    recovered_global_df = spark.createDataFrame(recovered_global_rdd_body.flatMap(map_function_global), schema = get_covid19_recovered_global_schema())
     recovered_global_df.write.format("org.apache.spark.sql.cassandra") \
                     .mode("overwrite").option("confirm.truncate","true") \
                     .options(keyspace='dataflix',table='covid19_recovered_cases_global').save()
