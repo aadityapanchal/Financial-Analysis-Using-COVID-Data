@@ -24,16 +24,6 @@ def Crypto_schema():
 def read_data(input, crypto_name, tablename):
     df = spark.read.option('header', 'true').csv(input, schema = Crypto_schema()).withColumn('cryptotype', lit(crypto_name))
     df = df.select(to_date(df["date"],"M/d/y").alias("date"),df["close"],df["volume"],df["open"],df["high"],df["low"], df["cryptotype"])
-    # maxm_close = df.select(max("close")).collect()[0][0]
-    # minm_close = df.select(min("close")).collect()[0][0]
-    # mean_close = (maxm_close-minm_close)/2
-    # maxm_open = df.select(max("open")).collect()[0][0]
-    # minm_open = df.select(min("open")).collect()[0][0]
-    # mean_open = (maxm_open-minm_open)/2
-    # per_df = df.select(df['date'], df['cryptotype'],((((df['close']-mean_close)/mean_close))*100).alias('close_percentage'), ((((df['open']-mean_open)/mean_open))*100).alias('open_percentage'))
-    # per_df.show()
-    # per_df.write.option('header', 'true').csv("./percentage_crypto_saved")
-    # #df.write.format("org.apache.spark.sql.cassandra").mode("overwrite").option("confirm.truncate","true").options(keyspace='dataflix',table=tablename).save()
     return df
 
 def main():
@@ -60,12 +50,6 @@ if __name__ == '__main__':
     cluster_seeds = ['127.0.0.1:9042']
     spark = SparkSession.builder.appName('Spark Cassandra example').config('spark.cassandra.connection.host', ','.join(cluster_seeds)).getOrCreate()
     main() #, key_space,table
-
-#   CREATE TABLE crypto (date date, close FLOAT, volume text, open FLOAT, high FLOAT, low FLOAT, cryptotype TEXT, primary key(date));
-#   CREATE TABLE bitcoin (date date, close FLOAT, volume text, open FLOAT, high FLOAT, low FLOAT, cryptotype TEXT, primary key(date));
-#   CREATE TABLE ripple (date date, close FLOAT, volume text, open FLOAT, high FLOAT, low FLOAT, cryptotype TEXT, primary key(date));
-#   CREATE TABLE ethereum (date date, close FLOAT, volume text, open FLOAT, high FLOAT, low FLOAT, cryptotype TEXT, primary key(date));
-
 
 
 
