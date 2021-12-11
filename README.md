@@ -136,6 +136,8 @@ This directory has files to load the data from cassandra tables. After laoding, 
 **model_train**<br/>
 This directory has the python model that trains and saves the machine learning models and used the load_data directory to get the data for training and validating the model.
 
+After running the shell script file, 2 new folders named, "cleaned_data"  that contains the data after etl and aggregate operations and "model_train" which has all the machine learning_models.
+
 
 
 
