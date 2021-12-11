@@ -113,14 +113,14 @@ We can execute the dataflix.sh file to run the entire project. Command to execut
 It does the following things: <br/>
 1. It runs all the spark jobs and saves the data in the cassandra db. All the files like crypto.py, stocks.py, commodities.py and forex.py will perform etl and save all the respective data in cassandra tables created as there is a for loop inside the script which will run all the spark jobs and save the data for the respective datasets into the cassandra Db with dataflix as keyspace and crypto, stocks, commodities and forex tables. <br/>
 2. The second part of the script will train the model by fetching the data from the cassandra db, after which we perform further etl and aggregate functions as per the requirements of the ml models. After the etl and aggregate operations are performed, the cleaned data is saved and used for visualization using Tableau. After training and validating the model, the model is saved in `model_train` folder for predictions.
-3. The report and power point presentation for visualization results can be found below:
+3. The report and power point presentation for visualizing the results can be found here:
  [Report PDF](https://github.com/aadityapanchal/Financial-Analysis-Using-COVID-Data/blob/main/Final%20Report.pdf)
 ppt:
 
 
 ## The project uses following directories
 
-the soruce directory has following files and folders:<br/>
+The source directory has the following files and folders:<br/>
 
 **dataflix.sh**
 
@@ -131,12 +131,12 @@ This directory has the datasets for covid19 data, stocks, forex, commodities and
 This has individual python files like covid.py(to save covid data), crypto.py(to save crypto data), etc to run spark jobs that saves data into cassandra db.<br/>
 
 **load_data**<br/>
-This directory has files to load the data from cassandra tables. After laoding, etl and aggregate operations are performed and then the daatframe is saved as csv file for visualization using Tableu.<br/> 
+This directory has files to load the data from cassandra tables. After laoding, etl and aggregate operations are performed and then the daatframe is saved as csv file for visualization using Tableau.<br/> 
 
 **model_train**<br/>
 This directory has the python model that trains and saves the machine learning models and used the load_data directory to get the data for training and validating the model.
 
-After running the shell script file, 2 new folders named, "cleaned_data"  that contains the data after etl and aggregate operations and "model_train" which has all the machine learning_models.
+After running the shell script file, 2 new folders named, "cleaned_data"  that contains the data after ETL and aggregate operations and "model_train" which has all the machine learning_models.
 
 
 
