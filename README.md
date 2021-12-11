@@ -18,40 +18,40 @@ Covid19 data related tables:
     new_cases_us int,<br/>
     total_cases_us int,<br/>
     PRIMARY KEY (date, city, province)<br/>
-);<br/>**
+)<br/>**
 
-**CREATE TABLE dataflix.covid19_deaths_us (<br/>
-    date date,<br/>
-    city text,<br/>
-    province text,<br/>
-    new_deaths_us int,<br/>
-    total_deaths_us int,<br/>
-    PRIMARY KEY (date, city, province)<br/>
-);<br/>**
+**CREATE TABLE dataflix.covid19_deaths_us (
+    date date,
+    city text,
+    province text,
+    new_deaths_us int,
+    total_deaths_us int,
+    PRIMARY KEY (date, city, province)
+)**
 
-**CREATE TABLE dataflix.covid19_cases_global (<br/>
-    date date,<br/>
-    country text,<br/>
-    new_cases_global int,<br/>
-    total_cases_global int,<br/>
-    PRIMARY KEY (date, country)<br/>
-);<br/>**
+**CREATE TABLE dataflix.covid19_cases_global (
+    date date,
+    country text,
+    new_cases_global int,
+    total_cases_global int,
+    PRIMARY KEY (date, country)
+)**
 
-**CREATE TABLE dataflix.covid19_deaths_global (<br/>
-    date date,<br/>
-    country text,<br/>
-    new_deaths_global int,<br/>
-    total_deaths_global int,<br/>
-    PRIMARY KEY (date, country)<br/>
-);<br/>**
+**CREATE TABLE dataflix.covid19_deaths_global (
+    date date,
+    country text,
+    new_deaths_global int,
+    total_deaths_global int,
+    PRIMARY KEY (date, country)
+)**
 
-**CREATE TABLE dataflix.covid19_recovered_cases_global (<br/>
-    date date,<br/>
-    country text,<br/>
-    new_recovered_global int,<br/>
-    total_recovered_global int,<br/>
-    PRIMARY KEY (date, country)<br/>
-);<br/>**
+**CREATE TABLE dataflix.covid19_recovered_cases_global (
+    date date,
+    country text,
+    new_recovered_global int,
+    total_recovered_global int,
+    PRIMARY KEY (date, country)
+)**
 
 Stock market Related table
 
@@ -82,30 +82,30 @@ Cryptocurrencies market related tables:
 
 Foreign Exchange Market realted table:
 
-**CREATE TABLE dataflix.forex (
-    forex_type text,
-    date date,
-    close float,
-    high float,
-    low float,
-    open float,
-    volume float,
-    PRIMARY KEY (forex_type, date)
-)**
+**CREATE TABLE dataflix.forex (<br/>
+    forex_type text,<br/>
+    date date,<br/>
+    close float,<br/>
+    high float,<br/>
+    low float,<br/>
+    open float,<br/>
+    volume float,<br/>
+    PRIMARY KEY (forex_type, date)<br/>
+)**<br/>
 
 Commodities market realted table:
 
-**CREATE TABLE dataflix.commodities (
-    type text,
-    market text,
-    date date,
-    close float,
-    high float,
-    low float,
-    open float,
-    volume float,
-    PRIMARY KEY (type, market, date)
-)**
+**CREATE TABLE dataflix.commodities (<br/>
+    type text,<br/>
+    market text,<br/>
+    date date,<br/>
+    close float,<br/>
+    high float,<br/>
+    low float,<br/>
+    open float,<br/>
+    volume float,<br/>
+    PRIMARY KEY (type, market, date)<br/>
+)**<br/>
 
 
 
