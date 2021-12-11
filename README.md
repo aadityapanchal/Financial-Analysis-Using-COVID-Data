@@ -114,7 +114,7 @@ It does the following things: <br/>
 1. It runs all the spark jobs and saves the data in the cassandra db. All the files like crypto.py, stocks.py, commodities.py and forex.py will perform etl and save all the respective data in cassandra tables created as there is a for loop inside the script which will run all the spark jobs and save the data for the respective datasets into the cassandra Db with dataflix as keyspace and crypto, stocks, commodities and forex tables. <br/>
 2. The second part of the script will train the model by fetching the data from the cassandra db, after which we perform further etl and aggregate functions as per the requirements of the ml models. After the etl and aggregate operations are performed, the cleaned data is saved and used for visualization using Tableau. After training and validating the model, the model is saved in `model_train` folder for predictions.
 3. The report and power point presentation for visualization results can be found below:
-report pdf:
+ [Report PDF](https://github.com/aadityapanchal/Financial-Analysis-Using-COVID-Data/blob/main/Final%20Report.pdf)
 ppt:
 
 
