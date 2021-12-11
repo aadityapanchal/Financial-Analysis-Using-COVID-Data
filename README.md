@@ -18,40 +18,40 @@ Covid19 data related tables:
     new_cases_us int,<br/>
     total_cases_us int,<br/>
     PRIMARY KEY (date, city, province)<br/>
-)<br/>**
+);<br/>**
 
-**CREATE TABLE dataflix.covid19_deaths_us (
-    date date,
-    city text,
-    province text,
-    new_deaths_us int,
-    total_deaths_us int,
-    PRIMARY KEY (date, city, province)
-)**
+**CREATE TABLE dataflix.covid19_deaths_us (<br/>
+    date date,<br/>
+    city text,<br/>
+    province text,<br/>
+    new_deaths_us int,<br/>
+    total_deaths_us int,<br/>
+    PRIMARY KEY (date, city, province)<br/>
+);<br/>**
 
-**CREATE TABLE dataflix.covid19_cases_global (
-    date date,
-    country text,
-    new_cases_global int,
-    total_cases_global int,
-    PRIMARY KEY (date, country)
-)**
+**CREATE TABLE dataflix.covid19_cases_global (<br/>
+    date date,<br/>
+    country text,<br/>
+    new_cases_global int,<br/>
+    total_cases_global int,<br/>
+    PRIMARY KEY (date, country)<br/>
+);<br/>**
 
-**CREATE TABLE dataflix.covid19_deaths_global (
-    date date,
-    country text,
-    new_deaths_global int,
-    total_deaths_global int,
-    PRIMARY KEY (date, country)
-)**
+**CREATE TABLE dataflix.covid19_deaths_global (<br/>
+    date date,<br/>
+    country text,<br/>
+    new_deaths_global int,<br/>
+    total_deaths_global int,<br/>
+    PRIMARY KEY (date, country)<br/>
+);<br/>**
 
-**CREATE TABLE dataflix.covid19_recovered_cases_global (
-    date date,
-    country text,
-    new_recovered_global int,
-    total_recovered_global int,
-    PRIMARY KEY (date, country)
-)**
+**CREATE TABLE dataflix.covid19_recovered_cases_global (<br/>
+    date date,<br/>
+    country text,<br/>
+    new_recovered_global int,<br/>
+    total_recovered_global int,<br/>
+    PRIMARY KEY (date, country)<br/>
+);<br/>**
 
 Stock market Related table
 
