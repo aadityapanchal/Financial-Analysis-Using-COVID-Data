@@ -131,34 +131,9 @@ This directory has the datasets for covid19 data, stocks, forex, commodities and
 This has individual python files like covid.py(to save covid data), crypto.py(to save crypto data), etc to run spark jobs that saves data into cassandra db.<br/>
 
 **load_data**<br/>
-This directory has files to load the data from cassandra tables. After laoding, etl and aggregate operations are performed and then the daatframe is saved as csv file for visualization using Tableau.<br/> 
+This directory has files to load the data from cassandra tables. After laoding, etl and aggregate operations are performed and then the dataframe is saved as csv file for visualization using Tableau.<br/> 
 
 **model_train**<br/>
 This directory has the python model that trains and saves the machine learning models and used the load_data directory to get the data for training and validating the model.
 
 After running the shell script file, 2 new folders named, "cleaned_data"  that contains the data after ETL and aggregate operations and "model_train" which has all the machine learning_models.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
